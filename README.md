@@ -54,7 +54,9 @@ fa-learning-map/
 ├── assets/ch01/    # 第1章教学插图
 ├── notes/          # 后续：源码阅读和调试笔记
 ├── examples/
-│   └── ch01/pytorch_transformer_shapes.py
+│   └── ch01/
+│       ├── pytorch_transformer_shapes.ipynb
+│       └── pytorch_transformer_shapes.py
 └── benchmarks/     # 后续：精度与性能记录
 ```
 
