@@ -41,6 +41,8 @@ flowchart TD
 | 现代完整代码补充 | [karpathy/nanochat](https://github.com/karpathy/nanochat) | 查看一个现代小型 LLM 如何把 Tokenizer、模型与带 Cache 的推理串起来，不要求第一遍逐行阅读 |
 | 推理系统衔接 | [skyzh/tiny-llm](https://github.com/skyzh/tiny-llm) | 本章结束后了解 KV Cache、Decode、Tiled Prefill 如何继续走向推理系统 |
 
+> 正在阅读 Happy-LLM 第二章但被代码语法卡住？请配合阅读 [补充篇：读懂 Transformer 代码所需的 PyTorch 基础](02-pytorch-transformer-code-guide.md)，并运行其中的 Shape 实验。
+
 ### 建议阅读顺序
 
 1. 先完整阅读本章，形成总图。
