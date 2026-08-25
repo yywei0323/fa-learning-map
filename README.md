@@ -15,7 +15,7 @@
 ## 建议从这里开始
 
 1. [第 1 章｜大模型基础：从文本到逐 Token 推理](docs/01-llm-basics/README.md)
-2. [第 1 章补充｜读懂 Transformer 代码所需的 PyTorch 基础](docs/01-llm-basics/02-pytorch-transformer-code-guide.md)
+2. [第 1 章补充｜掩码自注意力与多头注意力（代码内联解释）](docs/01-llm-basics/02-pytorch-transformer-code-guide.md)
 3. [学习总框架：从 Transformer 到 FIA Kernel](docs/01-learning-framework.md)
 4. [五阶段学习路线与验收标准](docs/roadmap.md)
 5. [FA 零基础扫盲](docs/00-fa-primer.md)
