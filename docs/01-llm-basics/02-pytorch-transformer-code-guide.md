@@ -26,7 +26,7 @@
 5. 识别教材示例中的简化假设，不把教学代码直接等同于工程实现；
 6. 看懂这些代码与后续 FA/FIA 算子学习之间的关系。
 
-配套实验：[pytorch_transformer_shapes.py](../../examples/ch01/pytorch_transformer_shapes.py)
+推荐配套实验：[pytorch_transformer_shapes.ipynb](../../examples/ch01/pytorch_transformer_shapes.ipynb)（逐格运行）；[pytorch_transformer_shapes.py](../../examples/ch01/pytorch_transformer_shapes.py) 保留为完整脚本参考。
 
 ---
 
