@@ -15,11 +15,13 @@
 ## 建议从这里开始
 
 1. [第 1 章｜大模型基础：从文本到逐 Token 推理](docs/01-llm-basics/README.md)
-2. [第 1 章补充｜掩码自注意力与多头注意力（代码内联解释）](docs/01-llm-basics/02-pytorch-transformer-code-guide.md)
-3. [学习总框架：从 Transformer 到 FIA Kernel](docs/01-learning-framework.md)
-4. [五阶段学习路线与验收标准](docs/roadmap.md)
-5. [FA 零基础扫盲](docs/00-fa-primer.md)
-6. [术语表](docs/glossary.md)
+2. [第 2 章｜从 Token 到 Loss：端到端读懂 Transformer 源码](docs/02-transformer-end-to-end/README.md)
+3. [第 2 章配套 Notebook｜完整前向、Loss、反向传播与 Shape 断言](examples/ch02/transformer_end_to_end.ipynb)
+4. [可选补充｜掩码自注意力与多头注意力](docs/01-llm-basics/02-pytorch-transformer-code-guide.md)
+5. [学习总框架：从 Transformer 到 FIA Kernel](docs/01-learning-framework.md)
+6. [五阶段学习路线与验收标准](docs/roadmap.md)
+7. [FA 零基础扫盲](docs/00-fa-primer.md)
+8. [术语表](docs/glossary.md)
 
 ## 一张图理解学习对象
 
@@ -49,14 +51,18 @@ fa-learning-map/
 │   ├── 01-llm-basics/
 │   │   ├── README.md
 │   │   └── 02-pytorch-transformer-code-guide.md
+│   ├── 02-transformer-end-to-end/
+│   │   └── README.md
 │   ├── roadmap.md
 │   └── glossary.md
 ├── assets/ch01/    # 第1章教学插图
 ├── notes/          # 后续：源码阅读和调试笔记
 ├── examples/
-│   └── ch01/
-│       ├── pytorch_transformer_shapes.ipynb
-│       └── pytorch_transformer_shapes.py
+│   ├── ch01/
+│   │   ├── pytorch_transformer_shapes.ipynb
+│   │   └── pytorch_transformer_shapes.py
+│   └── ch02/
+│       └── transformer_end_to_end.ipynb
 └── benchmarks/     # 后续：精度与性能记录
 ```
 
