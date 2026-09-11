@@ -22,6 +22,7 @@
 6. [五阶段学习路线与验收标准](docs/roadmap.md)
 7. [FA 零基础扫盲](docs/00-fa-primer.md)
 8. [术语表](docs/glossary.md)
+9. [CANN / Ascend C 编程指导与硬件资料入口](docs/references/cann-ascendc-guide.md)
 
 ## 一张图理解学习对象
 
@@ -88,6 +89,8 @@ fa-learning-map/
 master 代码、CANN 安装包和 API 文档不配套时，很容易出现编译错误、Tiling 失败或运行时错误。
 
 ## 主要官方资料
+
+- **项目指定参考**：[CANN 8.3 RC1 Ascend C 编程指导：基本架构](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/83RC1/opdevg/Ascendcopdevg/atlas_ascendc_10_0008.html)。用户指定其为编程与硬件资料入口，详见[项目记录](docs/references/cann-ascendc-guide.md)。
 
 - [CANN ops-transformer：Transformer 类大模型算子库](https://gitcode.com/cann/ops-transformer)
 - [FusedInferAttentionScore 源码目录](https://gitcode.com/cann/ops-transformer/tree/master/attention/fused_infer_attention_score)
