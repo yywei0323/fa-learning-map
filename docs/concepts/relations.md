@@ -67,6 +67,17 @@ flowchart LR
 | Cube / Vector | 协同执行 | Kernel | 计算、搬运与等待共同影响时间 |
 | Profiling | 提供证据 | 瓶颈判断 | 源码中的 Wait 只说明依赖存在 |
 
+## PA 与稀疏化的连续阅读路径
+
+[KV Cache](02-model/transformer-and-inference.md) → [分页与 blockTable](07-features/paging-sparsity.md#paged-attention) → [稀疏选块与重新归一化](07-features/paging-sparsity.md#sparse-attention) → [组合寻址](07-features/paging-sparsity.md#sparse-pa)。
+
+| 起点 | 关系 | 终点 | 具体含义 |
+|---|---|---|---|
+| Decode | 追加新 token 的 K/V | KV Cache | 有效长度增长，页满后可继续分配新页 |
+| PA 页表 | 保持逻辑顺序并映射 | 物理存储 | 物理页可以不连续，不改变目标 Attention 公式 |
+| 稀疏选块 | 限定本次参与集合 | Softmax / PV | 对选中的有效位置归一化，通常改变相对稠密目标的输出 |
+| 某个 Query 跳过 KV | 不等同于删除 | KV Cache | 其他 Query 仍可能使用同一份 K/V |
+
 ## 用四个反例检查是否理解
 
 1. 把输入标签从 TND 改成 BNSD，数据不会自动重新排列。

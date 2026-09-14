@@ -37,7 +37,9 @@
 | 为什么分块后要改 expMax？ | [历史 max、sum、输出累积的换基](03-attention/online-softmax.md) |
 | L1、UB、AIC、AIV、VF 是什么？ | [计算、存储与代码函数的层级](05-hardware/ascend.md) |
 | BNS1 分核是什么？ | [任务数、核数、S1/S2 分块](06-implementation/scheduling-and-matmul.md) |
-| PA、sparse 映射、blockTable 是什么？ | [从逻辑选块到物理地址](07-features/paging-sparsity.md) |
+| Page Attention / PA 是什么？ | [10 个 token 的分页、页表和寻址示例](07-features/paging-sparsity.md#paged-attention) |
+| 稀疏化是什么意思？ | [8 个块选 3 个，及 Softmax 重新归一化](07-features/paging-sparsity.md#sparse-attention) |
+| sparse 映射、blockTable 怎样配合？ | [从逻辑选块到物理地址](07-features/paging-sparsity.md#sparse-pa) |
 | MatmulBase、MatmulFull、模板参数？ | [具体源码中的执行路径](06-implementation/scheduling-and-matmul.md) |
 | Cube bound、Vector bound、阻塞在 scale？ | [瓶颈与等待的区别](08-validation/performance-and-tests.md) |
 | QBSA-MXFP8、Stem Indexer、FIA 是否同级？ | [算法、算子、路径和上游选块](07-features/operator-map.md) |

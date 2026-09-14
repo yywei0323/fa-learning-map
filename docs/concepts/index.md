@@ -213,23 +213,23 @@
 
 | 术语 / 别名 | 解释所在页 |
 |---|---|
-| PA / PagedAttention | [查看解释](07-features/paging-sparsity.md) |
-| Page / KV block | [查看解释](07-features/paging-sparsity.md) |
-| Logical page / Physical page | [查看解释](07-features/paging-sparsity.md) |
-| blockTable / block_table | [查看解释](07-features/paging-sparsity.md) |
-| pa_block_size | [查看解释](07-features/paging-sparsity.md) |
-| PA_BNBD | [查看解释](07-features/paging-sparsity.md) |
-| seqused | [查看解释](07-features/paging-sparsity.md) |
-| Sparse / Dense | [查看解释](07-features/paging-sparsity.md) |
-| Block Sparse | [查看解释](07-features/paging-sparsity.md) |
-| sparse_indices | [查看解释](07-features/paging-sparsity.md) |
-| sparse_seq_len | [查看解释](07-features/paging-sparsity.md) |
-| Sparse mapping | [查看解释](07-features/paging-sparsity.md) |
-| Sparse density | [查看解释](07-features/paging-sparsity.md) |
-| Empty sparse row | [查看解释](07-features/paging-sparsity.md) |
-| Sink / Window / TopK blocks | [查看解释](07-features/paging-sparsity.md) |
-| qflat / kflat | [查看解释](07-features/paging-sparsity.md) |
-| vbias | [查看解释](07-features/paging-sparsity.md) |
+| PA / PagedAttention / Page Attention / 分页注意力 | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| Page / KV block | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| Logical page / Physical page | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| blockTable / block_table | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| pa_block_size | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| PA_BNBD | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| seqused | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| Sparse / Dense / 稀疏化 / 稀疏注意力 | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| Block Sparse | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| sparse_indices | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| sparse_seq_len | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| Sparse mapping | [查看解释](07-features/paging-sparsity.md#sparse-pa) |
+| Sparse density | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| Empty sparse row | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| Sink / Window / TopK blocks | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| qflat / kflat | [查看解释](07-features/paging-sparsity.md#stem-indexer) |
+| vbias | [查看解释](07-features/paging-sparsity.md#stem-indexer) |
 | Quantization / Dequantization | [查看解释](07-features/quantization.md) |
 | INT8 | [查看解释](07-features/quantization.md) |
 | FP16 | [查看解释](07-features/quantization.md) |

@@ -53,3 +53,14 @@
 本次文档校验针对新增/修改的本仓相对链接、术语索引和示例公式。在线 Softmax 的教学脚本保留在 [examples/concepts](../../examples/concepts/verify_online_softmax.py)，验证实数近似的 CPU 数学模型，不验证 Ascend Kernel、MXFP8 硬件精度或性能。已有 Notebook 的历史运行状态仍以原课程记录为准。
 
 本次重新执行教学脚本：526 种分块全部通过，最大输出绝对差约 6.217e-15；两块示例输出为 34.926527346。该结果只对应 Python 双精度数学模型。
+
+## 2026-09-14：PA 与稀疏化补充
+
+根据后续两次概念问答，扩充第 7 层原有分页与稀疏章节，加入分页地址示例、稀疏块选择、Softmax 重新归一化、缓存保留与组合寻址。同时同步知识网络第 7 层的练习与术语导航。索引合并 Page Attention / 分页注意力 / 稀疏化等别名，仍为 262 个索引项；八层结构不变。
+
+- [PagedAttention 原论文](https://arxiv.org/abs/2309.06180)：分页管理、缓存动态增长、共享与内存浪费的背景，已读取摘要。
+- [vLLM Paged Attention](https://docs.vllm.ai/en/latest/design/paged_attention/)：块存储、地址和计算过程，已读取相关实现说明。
+- [FlashAttention 论文](https://arxiv.org/abs/2205.14135)：区分相同数学目标的稠密分块与块稀疏近似。
+- 10 个 token / 每页 4 个、8 个块选 3 个、概率重新归一化均为教学示例，不是实际设备配置或性能测量。
+
+本次补充仍不改变上文对未取得项目附件的覆盖范围说明。

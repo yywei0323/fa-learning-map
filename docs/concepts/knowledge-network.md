@@ -216,7 +216,13 @@ MatmulBase/Full 是特定 QBSA 源码中的函数职责；不作为所有 Matmul
 
 练习：选中稀疏块号 3，设稀疏块大小 128、PA 页大小 256：起点 token=384，逻辑页=1，页内偏移=128，再查 blockTable。随后解释 scale 为什么必须映射到同一份逻辑数据。此例只演示起点，跨页区间还需继续分段。
 
-资料：[分页与稀疏](07-features/paging-sparsity.md) · [量化与精度](07-features/quantization.md) · [算法与算子关系](07-features/operator-map.md)
+补充练习（2026-09-14）：
+
+1. [PA 入门](07-features/paging-sparsity.md#paged-attention)：10 个 token、每页 4 个、页表 [7,2,10]，定位 token 5，并说明剩余容量。
+2. [稀疏化入门](07-features/paging-sparsity.md#sparse-attention)：8 个 KV 块只选 [0,3,7]，解释哪些连接被跳过；再把保留概率 [0.2,0.4] 重新归一化，说明为什么输出通常会改变。
+3. [组合寻址](07-features/paging-sparsity.md#sparse-pa)：区分“未被某个 Query 选中”和“KV 已从缓存删除”，串起 sparse_indices 与 blockTable。
+
+资料：[PA 分页](07-features/paging-sparsity.md#paged-attention) · [稀疏化](07-features/paging-sparsity.md#sparse-attention) · [量化与精度](07-features/quantization.md) · [算法与算子关系](07-features/operator-map.md)
 
 ### 第 8 层：验证与性能——让结论带证据
 
@@ -526,23 +532,23 @@ S3 需注明“CPU 数学实验”还是“NPU 算子验证”；性能结论需
 
 | 术语 / 别名 | 解释所在页 |
 |---|---|
-| PA / PagedAttention | [查看解释](07-features/paging-sparsity.md) |
-| Page / KV block | [查看解释](07-features/paging-sparsity.md) |
-| Logical page / Physical page | [查看解释](07-features/paging-sparsity.md) |
-| blockTable / block_table | [查看解释](07-features/paging-sparsity.md) |
-| pa_block_size | [查看解释](07-features/paging-sparsity.md) |
-| PA_BNBD | [查看解释](07-features/paging-sparsity.md) |
-| seqused | [查看解释](07-features/paging-sparsity.md) |
-| Sparse / Dense | [查看解释](07-features/paging-sparsity.md) |
-| Block Sparse | [查看解释](07-features/paging-sparsity.md) |
-| sparse_indices | [查看解释](07-features/paging-sparsity.md) |
-| sparse_seq_len | [查看解释](07-features/paging-sparsity.md) |
-| Sparse mapping | [查看解释](07-features/paging-sparsity.md) |
-| Sparse density | [查看解释](07-features/paging-sparsity.md) |
-| Empty sparse row | [查看解释](07-features/paging-sparsity.md) |
-| Sink / Window / TopK blocks | [查看解释](07-features/paging-sparsity.md) |
-| qflat / kflat | [查看解释](07-features/paging-sparsity.md) |
-| vbias | [查看解释](07-features/paging-sparsity.md) |
+| PA / PagedAttention / Page Attention / 分页注意力 | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| Page / KV block | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| Logical page / Physical page | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| blockTable / block_table | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| pa_block_size | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| PA_BNBD | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| seqused | [查看解释](07-features/paging-sparsity.md#paged-attention) |
+| Sparse / Dense / 稀疏化 / 稀疏注意力 | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| Block Sparse | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| sparse_indices | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| sparse_seq_len | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| Sparse mapping | [查看解释](07-features/paging-sparsity.md#sparse-pa) |
+| Sparse density | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| Empty sparse row | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| Sink / Window / TopK blocks | [查看解释](07-features/paging-sparsity.md#sparse-attention) |
+| qflat / kflat | [查看解释](07-features/paging-sparsity.md#stem-indexer) |
+| vbias | [查看解释](07-features/paging-sparsity.md#stem-indexer) |
 | Quantization / Dequantization | [查看解释](07-features/quantization.md) |
 | INT8 | [查看解释](07-features/quantization.md) |
 | FP16 | [查看解释](07-features/quantization.md) |
