@@ -12,6 +12,10 @@
 4. 理解 FIA 特性范围，以及 GQA、PA、MLA 等推理特性；
 5. 熟悉 Ascend C 基础/高阶 API，理解 Softmax 与 SoftmaxFlash、SoftmaxFlashV2。
 
+## 名词解释与概念关联
+
+新增 [八层概念目录](docs/concepts/README.md)、[全部术语索引](docs/concepts/index.md)和[概念关系图](docs/concepts/relations.md)，集中整理当前可访问学习资料。独立项目附件尚未成功下载，覆盖范围与固定源码版本见[来源记录](docs/concepts/sources.md)。
+
 ## 建议从这里开始
 
 1. [第 1 章｜大模型基础：从文本到逐 Token 推理](docs/01-llm-basics/README.md)
@@ -28,17 +32,13 @@
 
 ```text
 大模型生成任务
-  └─ Transformer Decoder
-      ├─ Attention
-      │   ├─ Prefill：一次处理整段 Prompt
-      │   └─ Decode：逐 Token 生成 + 读取 KV Cache
-      └─ MLP / MoE
-           ↓
-FlashAttention：Attention 的 IO-aware 分块算法
-           ↓
-FIA（FusedInferAttentionScore）：昇腾推理融合 Attention 算子
-           ↓
-aclnn 接口 → Host/Tiling → Kernel/Ascend C → AI Core
+├─ 执行阶段：Prefill / Decode，使用 KV Cache
+└─ Transformer Decoder
+    ├─ Attention：QKᵀ → Scale/Mask → Softmax → PV
+    │   ├─ 算法方法：FlashAttention 的分块、在线更新与 IO 优化
+    │   └─ 推理算子实现之一：FIA（FusedInferAttentionScore）
+    │       └─ 接口 → Host/Tiling → Ascend C Kernel → AI Core
+    └─ MLP / MoE
 ```
 
 ## 仓库规划
@@ -54,6 +54,7 @@ fa-learning-map/
 │   │   └── 02-pytorch-transformer-code-guide.md
 │   ├── 02-transformer-end-to-end/
 │   │   └── README.md
+│   ├── concepts/   # 八层名词解释、关系图与版本案例
 │   ├── roadmap.md
 │   └── glossary.md
 ├── assets/ch01/    # 第1章教学插图
