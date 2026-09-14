@@ -14,6 +14,8 @@
 
 ## 名词解释与概念关联
 
+按知识依赖学习，请先读 [知识网络与分层学习地图](docs/concepts/knowledge-network.md)：包含八层内部学习顺序、跨层关系、六次聚焦学习和练习验收。
+
 新增 [八层概念目录](docs/concepts/README.md)、[全部术语索引](docs/concepts/index.md)和[概念关系图](docs/concepts/relations.md)，集中整理当前可访问学习资料。独立项目附件尚未成功下载，覆盖范围与固定源码版本见[来源记录](docs/concepts/sources.md)。
 
 ## 建议从这里开始
